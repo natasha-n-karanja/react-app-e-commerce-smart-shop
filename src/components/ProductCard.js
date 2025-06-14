@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
+import { useCart } from '../context/CartContext';
 
 export default function ProductCard({ product }) {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart } = useCart();
 
   return (
     <div className="border rounded-lg p-4">

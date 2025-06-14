@@ -1,8 +1,9 @@
 import { useState, useContext } from 'react';
 import { CartContext } from '../context/CartContext';
+import { useCart } from '../context/CartContext';
 
 export default function Checkout() {
-  const { cartItems } = useContext(CartContext);
+  const { cart } = useCart();
   const [form, setForm] = useState({ name: '', email: '', address: '' });
   const [submitted, setSubmitted] = useState(false);
 

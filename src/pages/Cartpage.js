@@ -1,19 +1,20 @@
 import { useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import { useCart } from '../context/CartContext';
+
 
 export default function Cart() {
-  const { cartItems, removeFromCart } = useContext(CartContext);
-  const total = cartItems
+  const { cart, removeFromCart } = useCart();
+  const total = cart
     .reduce((sum, item) => sum + item.price * item.qty, 0)
     .toFixed(2);
 
   return (
     <div className="p-6">
-      {cartItems.length === 0 ? (
+      {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
         <>
-          {cartItems.map(item => (
+          {cart.map(item => (
             <div key={item.id} className="flex items-center mb-4">
               <img src={item.image} alt="" className="w-16 h-16 object-cover mr-4"/>
               <div>

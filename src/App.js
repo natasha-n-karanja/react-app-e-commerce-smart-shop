@@ -7,7 +7,7 @@ import Checkout from './pages/Checkoutpage.js';
 
 function App() {
   return (
-    <>
+    <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -15,7 +15,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
       </Routes>
-    </>
+    </div>
   );
 }
 
