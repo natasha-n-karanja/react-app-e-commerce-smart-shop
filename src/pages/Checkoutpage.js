@@ -1,5 +1,5 @@
-import { useState, useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import { useState } from 'react';
+// import { CartContext } from '../context/CartContext';
 import { useCart } from '../context/CartContext';
 
 export default function Checkout() {
