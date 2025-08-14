@@ -1,21 +1,23 @@
-import { Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar.js';
-import Home from './pages/Homepage.js';
-import Products from './pages/Productpage.js';
-import Cart from './pages/Cartpage.js';
-import Checkout from './pages/Checkoutpage.js';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import Login from "./pages/Login";
 
 function App() {
   return (
-    <div>
+    <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
-    </div>
+    </Router>
   );
 }
 
