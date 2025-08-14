@@ -41,3 +41,75 @@ export default function Checkout() {
     </form>
   );
 }
+
+
+import { useCart } from "../context/CartContext";
+
+export default function Checkout() {
+  const { cart } = useCart();
+
+  const handleCheckout = async () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("Please login first");
+      return;
+    }
+
+    const res = await fetch("http://127.0.0.1:5000/api/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ cart }),
+    });
+
+    const data = await res.json();
+    alert(data.msg);
+  };
+
+  return (
+    <div className="p-6">
+      <h2 className="text-2xl mb-4">Checkout</h2>
+      <button onClick={handleCheckout} className="bg-green-500 text-white p-2 rounded">
+        Place Order
+      </button>
+    </div>
+  );
+}
+
+
+import { useCart } from "../context/CartContext";
+
+export default function Checkout() {
+  const { cart } = useCart();
+
+  const handleCheckout = async () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("Please login first");
+      return;
+    }
+
+    const res = await fetch("http://127.0.0.1:5000/api/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ cart }),
+    });
+
+    const data = await res.json();
+    alert(data.msg);
+  };
+
+  return (
+    <div className="p-6">
+      <h2 className="text-2xl mb-4">Checkout</h2>
+      <button onClick={handleCheckout} className="bg-green-500 text-white p-2 rounded">
+        Place Order
+      </button>
+    </div>
+  );
+}
