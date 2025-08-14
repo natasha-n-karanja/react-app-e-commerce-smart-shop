@@ -1,23 +1,65 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# -----------------
+# FRONTEND (React)
+# -----------------
+frontend/node_modules
+frontend/.pnp
+frontend.pnp.js
+frontend/coverage
+frontend/build
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.DS_Store
+frontend/Thumbs.db
+frontend/.vscode/
+frontend/.idea/
+frontend/*.suo
+frontend/*.ntvs*
+frontend/*.njsproj
+frontend/*.sln
+frontend/*.sw?
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# -----------------
+# BACKEND (Flask/Python)
+# -----------------
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/.Python
+backend/env/
+backend/venv/
+backend/.venv/
+backend/instance/
+backend/web/__pycache__/
+backend/.DS_Store
+backend/Thumbs.db
 
-# testing
-/coverage
+# Environment & secrets
+backend/.env
+backend/.flaskenv
 
-# production
-/build
+# Database
+backend/*.db
+backend/*.sqlite3
 
-# misc
+# Logs
+backend/logs/
+backend/*.log
+
+# -----------------
+# GLOBAL OS & IDE FILES
+# -----------------
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
