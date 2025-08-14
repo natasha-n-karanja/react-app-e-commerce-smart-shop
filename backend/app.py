@@ -39,3 +39,17 @@ def checkout():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+from flask import request
+from flask_jwt_extended import JWTManager, create_access_token
+
+app.config["JWT_SECRET_KEY"] = "secret123"
+jwt = JWTManager(app)
+
+@app.route('/api/login', methods=['POST'])
+def login():
+    data = request.json
+    if data["email"] == "test@test.com" and data["password"] == "1234":
+        token = create_access_token(identity=data["email"])
+        return jsonify(access_token=token)
+    return jsonify({"msg": "Bad credentials"}), 401
